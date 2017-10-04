@@ -1,5 +1,7 @@
 package store;
 
+import java.util.List;
+
 import domain.Member;
 
 public interface MemberStore {
@@ -8,5 +10,10 @@ public interface MemberStore {
 	
 	Member findMember(String id);
 	
+	void ModifyMember(String id, String password);
+	
+	void deleteMember(String id);
+	
+	List<Member> customerList();
 
 }

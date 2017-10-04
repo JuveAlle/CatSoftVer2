@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>나무소셜</title>
+    <title>CatSoft</title>
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/bootswatch.min.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.js"></script>
@@ -19,6 +19,11 @@
     	var check = document.getElementById("check").value;
     		if(password != check){
 	    		alert("비밀번호를 확인하세요");
+	    		return false;
+    		}
+    		if($("#checkYN").val()!=1){
+				alert("중복확인을해주세요");
+				return false;
     		}
     	}
     	
@@ -28,34 +33,33 @@
     	
     	var ckId = function(){
     		$.ajax({
-    			url : "/CatSoft/member/check.do",
+    			url : "/CatSoft/check.do",
     			type : "get",
     			data : {
     				"id" : $("#id").val()
-    			},
-    			success : pass,
-    			error : failCallback
+    			}
+    			,success : pass
+    			,error : failCallback
     		});
-    		alert($("#id").val());
+//     		 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+//     		alert($("#id").val());
     	}
     	
     	var pass = function(data) {
+    		console.log(data)
     		if (data) {
-    			console.log("pass에 진입함" + data);
-    			// 		dupStatus = data;
-    			// 		console.log("dupStatus : " + dupStatus);
-    			alert("사용가능한 아이디입니다.")
-    			// 			dupStatus = false;
+	    		alert("사용가능한 아이디입니다.");
+	    		$("#checkYN").val("1");
     		} else {
     			console.log(data);
-    			alert("중복 코드입니다.")
-    			// 			dupStatus = true;
+    			alert("중복된 아이디 입니다..");
+    			$("#id").val("");
     		}
-    		;
     	};
     	var failCallback = function(data) {
-    		console.log("콜백에 접속");
-    		alert("입력해주세요");
+    		alert("다시입력해주세요");
+    		console.log(data);
+    		$("#id").val("");
     	}
     	
     	
@@ -100,15 +104,15 @@
             </div>
             <div class="well">
                 <p id="show">회원가입을 위해 아래 내용들을 작성해 주세요.</p>
-                <form class="form-horizontal" action="${pageContext.request.contextPath}/memeber/join.do" method="POST" onsubmit="ckPassword()">
+                <form class="form-horizontal" action="${pageContext.request.contextPath}/regist.do" method="POST" onsubmit="ckPassword()">
                     <fieldset>
                         <div class="form-group">
                             <label class="col-lg-2 control-label">아이디</label>
 
                             <div class="col-lg-10">
-                                <input type="text" style="width: 60%; display: inline-block;" class="form-control" placeholder="아이디" id="id" name="id" value="${user.id }">
+                                <input type="text" style="width: 60%; display: inline-block;" class="form-control" placeholder="아이디" id="id" name="id" value="${member.id }">
                             	<button id="btnCheck" onclick="return false;">중복확인</button>
-<!-- 									<input type="button" id="btnCheck" value="중복확인"> -->
+								<input type="hidden"  id="checkYN" >
                             	<label style="display: inline-block;" id="show"></label>
                             </div>
                         </div>
@@ -116,21 +120,21 @@
                             <label class="col-lg-2 control-label">이름</label>
 
                             <div class="col-lg-10">
-                                <input type="text" style="width: 60%;" class="form-control" placeholder="이름" id="name" name="name" value="${user.name}">
+                                <input type="text" style="width: 60%;" class="form-control" placeholder="이름" id="name" name="name" value="${member.name}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 control-label">이메일</label>
 
                             <div class="col-lg-10">
-                                <input type="text" style="width: 60%;" class="form-control" placeholder="이메일" id="email" name="email" value="${user.email }"> 
+                                <input type="text" style="width: 60%;" class="form-control" placeholder="이메일" id="email" name="email" value="${member.email }"> 
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 control-label">비밀번호</label>
 
                             <div class="col-lg-10">
-                                <input type="password" style="width: 60%;" class="form-control" placeholder="비밀번호" id="password" name="password" value="${user.password }">
+                                <input type="password" style="width: 60%;" class="form-control" placeholder="비밀번호" id="password" name="password" value="${member.password }">
                             </div>
                         </div>
                         <div class="form-group">

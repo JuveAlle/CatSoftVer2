@@ -74,12 +74,13 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
+                    
                     <c:choose>
                     	<c:when test="${id eq null}">
 	                        <a class="page-scroll" href="${pageContext.request.contextPath}/views/login.jsp">Login</a>
                     	</c:when>
                     	<c:otherwise>
-							<a class="page-scroll" href="${pageContext.request.contextPath}/member/logout.do">${id }</a>
+							<a class="page-scroll" href="${pageContext.request.contextPath}/logout.do">Logout</a>
                     	</c:otherwise>
                     </c:choose>
                     </li>
@@ -96,7 +97,14 @@
             <div class="intro-text">
                 <div class="intro-lead-in">CatSoft에 오신것을 환영합니다!</div>
                 <div class="intro-heading">반가워요!</div>
-                <a href="#services" class="page-scroll btn btn-xl">아래로</a>
+                <c:choose>
+                	<c:when test="${id eq 'admin' }">
+		                <a href="#portfolioModal4" class="page-scroll btn btn-xl" data-toggle="modal">회원관리</a>
+                	</c:when>
+                	<c:otherwise>
+                			<a href="#services" class="page-scroll btn btn-xl">아래로</a>
+                	</c:otherwise>
+                </c:choose>
             </div>
         </div>
     </header>
@@ -274,48 +282,6 @@
 <!--                         <p class="text-muted">Website Design</p> -->
                     </div>
                 </div>
-<!--                 <div class="col-md-4 col-sm-6 portfolio-item"> -->
-<!--                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal"> -->
-<!--                         <div class="portfolio-hover"> -->
-<!--                             <div class="portfolio-hover-content"> -->
-<!--                                 <i class="fa fa-plus fa-3x"></i> -->
-<!--                             </div> -->
-<!--                         </div> -->
-<!--                         <img src="img/portfolio/golden.png" class="img-responsive" alt=""> -->
-<!--                     </a> -->
-<!--                     <div class="portfolio-caption"> -->
-<!--                         <h4>Golden</h4> -->
-<!--                         <p class="text-muted">Website Design</p> -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--                 <div class="col-md-4 col-sm-6 portfolio-item"> -->
-<!--                     <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal"> -->
-<!--                         <div class="portfolio-hover"> -->
-<!--                             <div class="portfolio-hover-content"> -->
-<!--                                 <i class="fa fa-plus fa-3x"></i> -->
-<!--                             </div> -->
-<!--                         </div> -->
-<!--                         <img src="img/portfolio/escape.png" class="img-responsive" alt=""> -->
-<!--                     </a> -->
-<!--                     <div class="portfolio-caption"> -->
-<!--                         <h4>Escape</h4> -->
-<!--                         <p class="text-muted">Website Design</p> -->
-<!--                     </div> -->
-<!--                 </div> -->
-<!--                 <div class="col-md-4 col-sm-6 portfolio-item"> -->
-<!--                     <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal"> -->
-<!--                         <div class="portfolio-hover"> -->
-<!--                             <div class="portfolio-hover-content"> -->
-<!--                                 <i class="fa fa-plus fa-3x"></i> -->
-<!--                             </div> -->
-<!--                         </div> -->
-<!--                         <img src="img/portfolio/dreams.png" class="img-responsive" alt=""> -->
-<!--                     </a> -->
-<!--                     <div class="portfolio-caption"> -->
-<!--                         <h4>Dreams</h4> -->
-<!--                         <p class="text-muted">Website Design</p> -->
-<!--                     </div> -->
-<!--                 </div> -->
             </div>
         </div>
     </section>
@@ -655,12 +621,47 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
-                                <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                <h2>회원 목록</h2>
+									<table style="border: 1px solid black; width: 800px;">
+									<thead style="border: 1px solid black;">
+										<tr>
+											<td>번호</td>
+											<td>아이디</td>
+											<td>이름</td>
+											<td>비밀번호</td>
+											<td>	수정</td>
+											<td>삭제</td>
+										</tr>
+										</thead>
+										<tbody>
+										<c:choose>
+											<c:when test="${memberList.size()==0 }">
+												<tr>
+													<td colspan="6">
+														회원이 없습니다.
+													</td>
+												</tr>
+											</c:when>
+											<c:otherwise>
+												<c:forEach var="memberList" items="${memberList }" varStatus="sts">
+													<tr>
+														<td>${sts.count }</td>
+														<td>${memberList.id }</td>
+														<td>${memberList.name }</td>
+														<td>${memberList.password }</td>
+														<td>
+															<a href="/updateMember.do?id=${memberList.id}">수정하기</a>
+														</td>
+														<td>
+															<a href="/deleteMember.do?id=${memberList.id}">삭제</a>
+														</td>
+													</tr>
+												</c:forEach>
+											</c:otherwise>
+										</c:choose>
+										</tbody>
+									</table>
+
                             </div>
                         </div>
                     </div>
@@ -699,7 +700,7 @@
     </div>
 
     <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-2" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">

@@ -74,7 +74,7 @@
     </div>
 
     <!-- form -->
-    <form class="form-signin" action="${pageContext.request.contextPath}/member/login.do" method="POST">
+    <form class="form-signin" action="${pageContext.request.contextPath}/login.do" method="POST">
         <input type="text" class="form-control" placeholder="아이디" name="id" value="${id}">
         <input type="password" class="form-control" placeholder="비밀번호" name="password">
         <div class="row form-btn">

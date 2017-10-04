@@ -25,5 +25,19 @@
  </select>
  
  
+ <select id="selectMember" parameterType="String" resultMap="selectMember">
+ 	select Id, NAME, EMAIL, PASSWORD
+ 	from MEMBER
+ 	Where Id !=#{admin}
+ </select>
+ 
+ <delete id="deleteMember" parameterType="String">
+ 	delete from MEMBER where Id=#{id}
+ </delete>
+ 
+ <update id="updateMember" parameterType="Map">
+ 	update Member set password = #{password}
+ 	where id = #{id}
+ </update>
  
  </mapper>
