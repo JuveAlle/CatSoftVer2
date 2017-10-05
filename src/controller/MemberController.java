@@ -82,10 +82,23 @@ public class MemberController {
 
 		return "redirect:/index.jsp";
 	}
+	
 	//회원정보 수정
+	@RequestMapping("updateMember.do")
+	public String updateMember(String id) {
+		
+		
+		return null;
+	}
+	
 	
 	//회원 탈퇴
-	
+	@RequestMapping("deleteMember.do")
+	public String deleteMember(String id) {
+		System.out.println("삭제할 아이디 넘어오는지 : "+id);
+		
+		return null;
+	}
 	
 	
 	

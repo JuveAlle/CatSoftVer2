@@ -650,10 +650,10 @@
 														<td>${memberList.name }</td>
 														<td>${memberList.password }</td>
 														<td>
-															<a href="/updateMember.do?id=${memberList.id}">수정하기</a>
+															<a href="${pageContext.request.contextPath}/updateMember.do?id=${memberList.id}">수정하기</a>
 														</td>
 														<td>
-															<a href="/deleteMember.do?id=${memberList.id}">삭제</a>
+															<a href="${pageContext.request.contextPath}/deleteMember.do?id=${memberList.id}">삭제</a>
 														</td>
 													</tr>
 												</c:forEach>
