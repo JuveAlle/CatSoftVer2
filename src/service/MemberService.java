@@ -19,6 +19,8 @@ public interface MemberService {
 	List<Member> memberList();
 	
 	//회원정보 수정
+	void ModifyMember(String id, String password);
 	
 	//회원 삭제
+	void deleteMember(String id);
 }

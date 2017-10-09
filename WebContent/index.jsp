@@ -33,6 +33,61 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
     <![endif]-->
+ <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.js"></script>
+<%--  <script type="text/javascript"	src="${pageContext.request.contextPath}/resources/js/jquery.js"></script> --%>
+<script>
+// 	$(document).ready(function(){
+// 		$("input[name='list']").each(function(index,element) {
+// 			index+=1;
+// 			$("#mdf"+index+"").click(modify);
+// 		});
+// 	});
+
+// 	var modify = function(data) {
+// 		console.log(data);
+// // 		alert("수정되었습니다."+data);
+// 	}
+	var mdf = function(data){
+		console.log(data);
+		$.ajax({
+			url:"/CatSoft/updateMember.do"
+			,type:"get"
+			,data : {
+				"id" : $("#selectId"+data+"").val(),
+				"password" :$("#mdfval"+data+"").val()
+			}
+			,success : update
+			,error : errorcallback
+		});
+	};
+	
+	var del = function(data) {
+		console.log(data);
+		$.ajax({
+			url:"/CatSoft/deleteMember.do"
+			,type:"get"
+			,data : {
+				"id" : $("#selectId"+data+"").val()
+			}
+			,success : update
+			,error : errorcallback
+		})
+	};
+	
+	var update = function(data) {
+		if(data) {
+			alert("수정완료");
+			window.location.reload();
+		} else {
+			alert("오류");
+		}
+	}
+
+	var errorcallback = function(data) {
+		console.log("실패");
+	}
+</script>
+
 
 </head>
 
@@ -629,6 +684,7 @@
 											<td>아이디</td>
 											<td>이름</td>
 											<td>비밀번호</td>
+											<td>변경비밀번호</td>
 											<td>	수정</td>
 											<td>삭제</td>
 										</tr>
@@ -650,10 +706,16 @@
 														<td>${memberList.name }</td>
 														<td>${memberList.password }</td>
 														<td>
-															<a href="${pageContext.request.contextPath}/updateMember.do?id=${memberList.id}">수정하기</a>
+															<input type="text" id="mdfval${sts.count }" style="width: 60px;">
 														</td>
 														<td>
-															<a href="${pageContext.request.contextPath}/deleteMember.do?id=${memberList.id}">삭제</a>
+															<input type="button" id="mdf${sts.count }" onclick="mdf(${sts.count})" name="list" value="수정하기">
+<%-- 															<a href="${pageContext.request.contextPath}/updateMember.do?id=${memberList.id}">수정하기</a> --%>
+														</td>
+														<td>
+															<input type="button" id="del${sts.count }" onclick="del(${sts.count})" value="삭제하기">
+															<input type="hidden" id="selectId${sts.count }" value="${memberList.id }">
+<%-- 															<a href="${pageContext.request.contextPath}/deleteMember.do?id=${memberList.id}">삭제</a> --%>
 														</td>
 													</tr>
 												</c:forEach>

@@ -47,4 +47,16 @@ public class MemberServiceLogic implements MemberService {
 		return memberList;
 	}
 
+	@Override
+	public void ModifyMember(String id, String password) {
+
+		store.ModifyMember(id, password);
+	}
+
+	@Override
+	public void deleteMember(String id) {
+
+		store.deleteMember(id);
+	}
+
 }

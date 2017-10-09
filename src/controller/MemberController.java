@@ -42,7 +42,7 @@ public class MemberController {
 		System.out.println("회원가입성공하면 여기로 와야됨");
 		ModelAndView mav = new ModelAndView();
 		if(service.createMember(member)==0) {
-			mav.setViewName("/index.jsp");
+			mav.setViewName("/views/login.jsp");
 			return mav;
 		}else {
 			mav.setViewName("/views/join.jsp");
@@ -85,19 +85,25 @@ public class MemberController {
 	
 	//회원정보 수정
 	@RequestMapping("updateMember.do")
-	public String updateMember(String id) {
+	@ResponseBody
+	public Boolean updateMember(String id, String password) {
+		System.out.println("업뎃할 아이디 넘어오는지 : "+id);
+		System.out.println("업뎃할 번호 넘어오는지 : "+password);
 		
-		
-		return null;
+		service.ModifyMember(id, password);
+		return true;
 	}
 	
 	
 	//회원 탈퇴
 	@RequestMapping("deleteMember.do")
-	public String deleteMember(String id) {
+	@ResponseBody
+	public Boolean deleteMember(String id) {
 		System.out.println("삭제할 아이디 넘어오는지 : "+id);
 		
-		return null;
+		service.deleteMember(id);
+		
+		return true;
 	}
 	
 	
