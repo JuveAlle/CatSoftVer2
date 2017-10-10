@@ -221,7 +221,8 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>2017</h4>
-                                    <h4 class="subheading">화정 청소년 카페 톡톡톡 아두이노 단기 교육</h4>
+                                    <h4 class="subheading">화정 청소년 카페 톡톡톡</h4>
+                                    <h4 class="subheading">아두이노 단기 교육</h4>
                                 </div>
                                 <div class="timeline-body">
 <!--                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p> -->
@@ -242,41 +243,41 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
+<!--                         <li> -->
+<!--                             <div class="timeline-image"> -->
+<!--                                 <img class="img-circle img-responsive" src="img/about/3.jpg" alt=""> -->
+<!--                             </div> -->
+<!--                             <div class="timeline-panel"> -->
+<!--                                 <div class="timeline-heading"> -->
+<!--                                     <h4>December 2012</h4> -->
+<!--                                     <h4 class="subheading">Transition to Full Service</h4> -->
+<!--                                 </div> -->
+<!--                                 <div class="timeline-body"> -->
+<!--                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </li> -->
+<!--                         <li class="timeline-inverted"> -->
+<!--                             <div class="timeline-image"> -->
+<!--                                 <img class="img-circle img-responsive" src="img/about/4.jpg" alt=""> -->
+<!--                             </div> -->
+<!--                             <div class="timeline-panel"> -->
+<!--                                 <div class="timeline-heading"> -->
+<!--                                     <h4>July 2014</h4> -->
+<!--                                     <h4 class="subheading">Phase Two Expansion</h4> -->
+<!--                                 </div> -->
+<!--                                 <div class="timeline-body"> -->
+<!--                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </li> -->
+<!--                         <li class="timeline-inverted"> -->
+<!--                             <div class="timeline-image"> -->
+<!--                                 <h4>Be Part -->
+<!--                                     <br>Of Our -->
+<!--                                     <br>Story!</h4> -->
+<!--                             </div> -->
+<!--                         </li> -->
                     </ul>
                 </div>
             </div>
@@ -446,7 +447,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+<!--                     <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p> -->
                 </div>
             </div>
         </div>
@@ -455,28 +456,28 @@
     <!-- Clients Aside -->
     <aside class="clients">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
+<!--             <div class="row"> -->
+<!--                 <div class="col-md-3 col-sm-6"> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt=""> -->
+<!--                     </a> -->
+<!--                 </div> -->
+<!--                 <div class="col-md-3 col-sm-6"> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt=""> -->
+<!--                     </a> -->
+<!--                 </div> -->
+<!--                 <div class="col-md-3 col-sm-6"> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt=""> -->
+<!--                     </a> -->
+<!--                 </div> -->
+<!--                 <div class="col-md-3 col-sm-6"> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt=""> -->
+<!--                     </a> -->
+<!--                 </div> -->
+<!--             </div> -->
         </div>
     </aside>
 
@@ -485,8 +486,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<!--                     <h2 class="section-heading">Contact Us</h2> -->
+<!--                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
             <div class="row">
