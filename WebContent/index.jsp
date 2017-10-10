@@ -102,7 +102,7 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                	<img alt="logo" src="${pageContext.request.contextPath}/img/logo.png">
+                	<img alt="logo" style="width: 50px; height: 40px;" src="${pageContext.request.contextPath}/img/logo.png">
                 </a>
             </div>
 
@@ -173,7 +173,7 @@
 		                <a href="#portfolioModal4" class="page-scroll btn btn-xl" data-toggle="modal">회원관리</a>
                 	</c:when>
                 	<c:otherwise>
-                			<a href="#services" class="page-scroll btn btn-xl">아래로</a>
+                			<a href="#services" class="page-scroll btn btn-xl">자세히</a>
                 	</c:otherwise>
                 </c:choose>
             </div>
