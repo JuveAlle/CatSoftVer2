@@ -102,7 +102,7 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                	<img alt="logo" style="width: 50px; height: 40px;" src="${pageContext.request.contextPath}/img/logo.png">
+                	<img alt="logo" style="width: 200px; height: 50px; position: relative; top: -17px;" src="${pageContext.request.contextPath}/img/logo.png">
                 </a>
             </div>
 
