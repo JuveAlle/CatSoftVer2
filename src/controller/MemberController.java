@@ -55,10 +55,14 @@ public class MemberController {
 	public String memberLogin(String id, String password, HttpSession session, Model md) {
 		Member member = service.loginMember(id);
 		List <Member> memberList = service.memberList();
-		if(member.getPassword().equals(password)) {
-			session.setAttribute("id", id);
-			md.addAttribute("memberList", memberList);
-			return "successLogin.do";
+		if(member!=null ){
+			if(member.getId().equals(id)) {
+				if(member.getPassword().equals(password)) {
+					session.setAttribute("id", id);
+					md.addAttribute("memberList", memberList);
+					return "successLogin.do";
+				}
+			}
 		}
 			return "/views/login.jsp";
 	}
@@ -68,8 +72,10 @@ public class MemberController {
 	public ModelAndView main(HttpSession session) {
 		System.out.println("여기로 오는거 맞지??");
 		String id = (String) session.getAttribute("id");
+		Member member = service.loginMember(id);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("id", id);
+		mav.addObject("user", member);
 		mav.setViewName("/index.jsp");
 		return mav;
 		

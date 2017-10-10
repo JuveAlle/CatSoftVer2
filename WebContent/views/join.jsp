@@ -20,11 +20,15 @@
     		if(password != check){
 	    		alert("비밀번호를 확인하세요");
 	    		return false;
+// 				break;
     		}
     		if($("#checkYN").val()!=1){
 				alert("중복확인을해주세요");
 				return false;
+// 				break;
     		}
+    		return true;
+    		alert("가입완료");
     	}
     	
     	$(function() {
@@ -104,7 +108,7 @@
             </div>
             <div class="well">
                 <p id="show">회원가입을 위해 아래 내용들을 작성해 주세요.</p>
-                <form class="form-horizontal" action="${pageContext.request.contextPath}/regist.do" method="POST" onsubmit="ckPassword()">
+                <form class="form-horizontal" action="${pageContext.request.contextPath}/regist.do" method="POST" onsubmit="return ckPassword()">
                     <fieldset>
                         <div class="form-group">
                             <label class="col-lg-2 control-label">아이디</label>

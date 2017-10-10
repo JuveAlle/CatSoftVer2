@@ -101,7 +101,9 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">CatSoft</a>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                	<img alt="logo" src="${pageContext.request.contextPath}/img/logo.png">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -151,7 +153,21 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">CatSoft에 오신것을 환영합니다!</div>
-                <div class="intro-heading">반가워요!</div>
+                <c:choose>
+                	<c:when test="${user.name eq 'admin' }">
+		                <div class="intro-heading">회원관리</div>
+                	</c:when>
+                	<c:otherwise>
+						<c:choose>
+							<c:when test="${user eq null }">
+				                <div class="intro-heading">반갑습니다.</div>
+							</c:when>
+							<c:otherwise>
+				                <div class="intro-heading">${user.name}님 반가워요!</div>
+							</c:otherwise>
+						</c:choose>                	
+                	</c:otherwise>
+                </c:choose>
                 <c:choose>
                 	<c:when test="${id eq 'admin' }">
 		                <a href="#portfolioModal4" class="page-scroll btn btn-xl" data-toggle="modal">회원관리</a>
@@ -216,7 +232,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                                <img class="img-circle img-responsive" src="${pageContext.request.contextPath}/img/about/1.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -231,7 +247,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                                <img class="img-circle img-responsive" src="${pageContext.request.contextPath}/img/about/2.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -356,7 +372,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/mj.png" class="img-responsive img-circle" alt="">
                         <h4>이민재</h4>
                         <p class="text-muted">CEO</p>
                         <ul class="list-inline social-buttons">
@@ -371,7 +387,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/js.png" class="img-responsive img-circle" alt="">
                         <h4>양지선</h4>
                         <p class="text-muted">Designer</p>
                         <ul class="list-inline social-buttons">
@@ -386,7 +402,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/sa.png" class="img-responsive img-circle" alt="">
                         <h4>김성아</h4>
                         <p class="text-muted">Developer</p>
                         <ul class="list-inline social-buttons">
@@ -401,7 +417,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/he.png" class="img-responsive img-circle" alt="">
                         <h4>이현의</h4>
                         <p class="text-muted">Developer</p>
                         <ul class="list-inline social-buttons">
@@ -416,7 +432,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/ms.png" class="img-responsive img-circle" alt="">
                         <h4>신민식</h4>
                         <p class="text-muted">Web Developer</p>
                         <ul class="list-inline social-buttons">
@@ -431,9 +447,9 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <img src="${pageContext.request.contextPath}/img/team/sh.png" class="img-responsive img-circle" alt="">
                         <h4>강수훈</h4>
-                        <p class="text-muted">Web Developer</p>
+                        <p class="text-muted">Developer</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -486,8 +502,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-<!--                     <h2 class="section-heading">Contact Us</h2> -->
-<!--                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Hp. 010-9706-5001</h3>
                 </div>
             </div>
             <div class="row">
@@ -606,7 +622,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
-                                <h2>Project Heading</h2>
+                                <h2></h2>
                                 <h2>아직 준비중 입니다.........</h2>
 <!--                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> -->
 <!--                                 <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt=""> -->
