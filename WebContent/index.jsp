@@ -186,7 +186,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">고양이소프트는 청소년 코딩교육의 출발점이 될 것 입니다.</h3>
+                    <h3 class="section-subheading text-muted" style="font-style: normal;">고양이소프트는 청소년 코딩교육의 <label style="color: red;">『출발점』</label>이 될 것 입니다.</h3>
                 </div>
             </div>
             <div class="row text-center">
